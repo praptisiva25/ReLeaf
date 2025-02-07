@@ -14,11 +14,11 @@ const Navbar: React.FC = () => {
 
       {/* Navigation Links */}
       <ul className="flex space-x-6 text-gray-800 font-medium">
-        <li className="text-green-700"><button>Home</button></li>
-        <li><button>Our Services</button></li>
-        <li><button>Blog</button></li>
-        <li><button>About Us</button></li>
-        <li><button>Contact Us</button></li>
+        <li className="hover:text-green-700"><button>Home</button></li>
+        <li className="hover:text-green-700"><button>Our Services</button></li>
+        <li className="hover:text-green-700"><button>Blog</button></li>
+        <li className="hover:text-green-700"><button >About Us</button></li>
+        <li className="hover:text-green-700"><button>Contact Us</button></li>
       </ul>
 
       {/* Auth Buttons */}
