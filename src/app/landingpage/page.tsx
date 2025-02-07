@@ -32,6 +32,8 @@ const LandingPage: React.FC = () => {
       className="h-[200px] w-auto object-contain "
     />
     </div>
+    
+
 
   <div >
     <img
