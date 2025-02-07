@@ -1,15 +1,14 @@
 import React from "react";
-import Logo from "../../public/ReLead_Truck.png";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex items-center justify-between p-4 bg-white shadow-md">
-      {/* Logo */}
+    <nav className="flex items-center justify-between p-4 bg-white shadow-md h-20">
       <div className="flex items-center">
         <img
-          src="/ReLeaf_Truck.png" // Replace with actual image path
+          src="./logo.png" 
           alt="Logo"
-          className="h-10 w-auto"
+          className="h-10 w-auto "
+          style={{scale: "3", translate: "40px 2px"}}
         />
       </div>
 
