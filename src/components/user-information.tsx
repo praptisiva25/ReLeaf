@@ -24,15 +24,19 @@ export default function UserInformation() {
   }
 
   return (
-    <Card className="p-6 h-full">
-      <h2 className="text-xl font-semibold mb-6">YOUR INFORMATION</h2>
+    <Card className="p-6 h-full border">
+      <h2 className="text-xl font-semibold mb-6 text-gray-800">YOUR INFORMATION</h2>
       <div className="space-y-6">
         <section className="space-y-4">
           {isEditing ? (
             <>
               <div>
                 <Label>Name</Label>
-                <Input value={userData.name} onChange={(e) => setUserData({ ...userData, name: e.target.value })} />
+                <Input
+                  value={userData.name}
+                  onChange={(e) => setUserData({ ...userData, name: e.target.value })}
+                  className="border-2 text-gray-700"
+                />
               </div>
               <div>
                 <Label>Email</Label>
@@ -40,11 +44,16 @@ export default function UserInformation() {
                   type="email"
                   value={userData.email}
                   onChange={(e) => setUserData({ ...userData, email: e.target.value })}
+                  className="border-2 text-gray-700"
                 />
               </div>
               <div>
                 <Label>Phone</Label>
-                <Input value={userData.phone} onChange={(e) => setUserData({ ...userData, phone: e.target.value })} />
+                <Input
+                  value={userData.phone}
+                  onChange={(e) => setUserData({ ...userData, phone: e.target.value })}
+                  className="border-2 text-gray-700"
+                />
               </div>
               <div>
                 <Label>Address</Label>
@@ -52,6 +61,7 @@ export default function UserInformation() {
                   value={userData.address}
                   onChange={(e) => setUserData({ ...userData, address: e.target.value })}
                   rows={4}
+                  className="border-2 text-gray-700"
                 />
               </div>
               <div>
@@ -59,6 +69,7 @@ export default function UserInformation() {
                 <Input
                   value={userData.companyName}
                   onChange={(e) => setUserData({ ...userData, companyName: e.target.value })}
+                  className="border-2 text-gray-700"
                 />
               </div>
               <div>
@@ -66,6 +77,7 @@ export default function UserInformation() {
                 <Input
                   value={userData.employeeId}
                   onChange={(e) => setUserData({ ...userData, employeeId: e.target.value })}
+                  className="border-2 text-gray-700"
                 />
               </div>
             </>
@@ -108,8 +120,8 @@ export default function UserInformation() {
 function InfoField({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <Label className="text-muted-foreground">{label}</Label>
-      <p className="text-sm whitespace-pre-line">{value}</p>
+      <Label className="text-gray-600">{label}</Label>
+      <p className="text-sm whitespace-pre-line text-gray-700">{value}</p>
     </div>
   )
 }
