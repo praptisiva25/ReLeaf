@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../../public/ReLead_Truck.png";
 
 const Navbar: React.FC = () => {
   return (
@@ -6,7 +7,7 @@ const Navbar: React.FC = () => {
       {/* Logo */}
       <div className="flex items-center">
         <img
-          src="/logo.png" // Replace with actual image path
+          src="/ReLeaf_Truck.png" // Replace with actual image path
           alt="Logo"
           className="h-10 w-auto"
         />
@@ -14,11 +15,11 @@ const Navbar: React.FC = () => {
 
       {/* Navigation Links */}
       <ul className="flex space-x-6 text-gray-800 font-medium">
-        {/* <li className="text-green-700"><button>Home<button/></li> */}
+        <li className="text-green-700"><button>Home</button></li>
         <li><button>Our Services</button></li>
         <li><button>Blog</button></li>
         <li><button>About Us</button></li>
-        {/* <li><button>Contact Us<button/></li> */}
+        <li><button>Contact Us</button></li>
       </ul>
 
       {/* Auth Buttons */}
