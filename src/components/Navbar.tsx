@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../../public/ReLead_Truck.png";
 
 const Navbar: React.FC = () => {
   return (
@@ -7,19 +6,19 @@ const Navbar: React.FC = () => {
       {/* Logo */}
       <div className="flex items-center">
         <img
-          src="/ReLeaf_Truck.png" // Replace with actual image path
+          src='logo.png' // Replace with actual image path
           alt="Logo"
-          className="h-10 w-auto"
+          className="h-20 w-auto"
         />
       </div>
 
       {/* Navigation Links */}
       <ul className="flex space-x-6 text-gray-800 font-medium">
-        <li className="text-green-700"><button>Home</button></li>
-        <li><button>Our Services</button></li>
-        <li><button>Blog</button></li>
-        <li><button>About Us</button></li>
-        <li><button>Contact Us</button></li>
+        <li className="hover:text-green-700"><button>Home</button></li>
+        <li className="hover:text-green-700"><button>Our Services</button></li>
+        <li className="hover:text-green-700"><button>Blog</button></li>
+        <li className="hover:text-green-700"><button >About Us</button></li>
+        <li className="hover:text-green-700"><button>Contact Us</button></li>
       </ul>
 
       {/* Auth Buttons */}
