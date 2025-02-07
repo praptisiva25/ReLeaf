@@ -57,7 +57,7 @@ export default function NewOrderForm() {
             />
           </div>
         </div>
-        <Button className="w-full bg-emerald-800 hover:bg-emerald-900 text-white">
+        <Button className="w-full bg-[#508d4e] hover:bg-[#3f7a3d] text-white">
           PROCEED
         </Button>
       </form>

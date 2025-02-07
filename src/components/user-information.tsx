@@ -24,7 +24,7 @@ export default function UserInformation() {
   }
 
   return (
-    <Card className="p-6 h-full border">
+    <Card className="p-6 h-full border bg-gray-50">
       <h2 className="text-xl font-semibold mb-6 text-gray-800">YOUR INFORMATION</h2>
       <div className="space-y-6">
         <section className="space-y-4">
@@ -96,16 +96,16 @@ export default function UserInformation() {
         <div className="flex gap-2 pt-4">
           {isEditing ? (
             <>
-              <Button className="flex-1" onClick={() => setIsEditing(false)}>
+              <Button className="flex-1 border-2 border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
                 CANCEL
               </Button>
-              <Button className="flex-1 bg-emerald-800 hover:bg-emerald-900 text-white" onClick={handleSave}>
+              <Button className="flex-1 bg-[#508D4E] hover:bg-[#3f7a3d] text-white" onClick={handleSave}>
                 SAVE
               </Button>
             </>
           ) : (
             <Button
-              className="w-full bg-emerald-800 hover:bg-emerald-900 text-white"
+              className="w-full bg-[#508D4E] hover:bg-[#3f7a3d] text-white"
               onClick={() => setIsEditing(true)}
             >
               EDIT
