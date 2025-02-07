@@ -2,13 +2,13 @@ import React from "react";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex items-center justify-between p-4 bg-white shadow-md">
-      {/* Logo */}
+    <nav className="flex items-center justify-between p-4 bg-white shadow-md h-20">
       <div className="flex items-center">
         <img
-          src='logo.png' // Replace with actual image path
+          src="./logo.png" 
           alt="Logo"
-          className="h-20 w-auto"
+          className="h-10 w-auto "
+          style={{scale: "3", translate: "40px 2px"}}
         />
       </div>
 

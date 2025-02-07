@@ -1,9 +1,12 @@
 import ProcessingUnit from "../../components/processing-unit"
+import Background from "@/components/ui/background"
 
 export default function ProcessingUnitPage() {
   return (
-    <div className="min-h-screen bg-white font-semibold">
-      <ProcessingUnit />
-    </div>
+    <Background>
+      <div className="min-h-screen">
+        <ProcessingUnit />
+      </div>
+    </Background>
   )
 }
