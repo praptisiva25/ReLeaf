@@ -1,4 +1,4 @@
-import ProcessingUnit from "../components/processing-unit"
+import ProcessingUnit from "../../components/processing-unit"
 
 export default function ProcessingUnitPage() {
   return (
