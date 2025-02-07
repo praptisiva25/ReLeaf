@@ -24,10 +24,10 @@ const Navbar: React.FC = () => {
 
       {/* Auth Buttons */}
       <div className="flex space-x-4">
-        <button className="bg-green-700 text-white px-4 py-2 rounded-lg">
+        <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-600">
           Login
         </button>
-        <button className="bg-green-700 text-white px-4 py-2 rounded-lg">
+        <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-600">
           Sign Up
         </button>
       </div>
