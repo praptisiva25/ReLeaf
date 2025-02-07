@@ -13,11 +13,11 @@ export default function PrivateLayout({
                     
                     <Image src="/logo (1).png" alt="Profile Picture" width={100} height={100} className="rounded-full" />
                     </div>
-                    <NavLink href="/">Home</NavLink>
-                    <NavLink href="/schedules">Our Services</NavLink>
-                    <NavLink href="/schedules">Blog</NavLink>
-                    <NavLink href="/schedules">About Us</NavLink>
-                    <NavLink href="/schedules">Contact Us</NavLink>
+                    <NavLink href="/home">Home</NavLink>
+                    <NavLink href="/ourservices">Our Services</NavLink>
+                    <NavLink href="/blog">Blog</NavLink>
+                    <NavLink href="/aboutus">About Us</NavLink>
+                    <NavLink href="/contactus">Contact Us</NavLink>
                     <div className="ml-auto size-10">
                         <UserButton 
                         appearance={{ elements: { userButtonAvatarBox: "size-full"}}} />
