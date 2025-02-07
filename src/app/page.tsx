@@ -1,10 +1,11 @@
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
+import ProcessingUnitPage from "@/pages/Processing-Unit-Page";
 
 export default async function Page() {
   return (
     <div>
-      <Navbar />
-      <h1>Page</h1>
+      <Navbar/>
+      <ProcessingUnitPage/>
     </div>
   );
 };
