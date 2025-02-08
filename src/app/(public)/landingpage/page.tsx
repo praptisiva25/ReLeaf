@@ -1,13 +1,14 @@
 import React from 'react';
-import Navbar from '@/components/Navbar';
+import Navbar from '../../../components/Navbar';
 
 const LandingPage: React.FC = () => {
   return (
     <div>
+      <Navbar />
       <div className="relative">
   <div  
     className="bg-cover bg-center w-full h-[857px] relative"
-    style={{ backgroundImage: "url('mo.png')" }}
+    style={{ backgroundImage: "url('page1.png')" }}
   >
   <div className="absolute left-[15px] top-[166px] w-full text-white font-['Perpetua_Titling_MT'] text-[128px] font-light leading-none">
     <h1>RELEAF</h1>
@@ -127,3 +128,4 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
+
