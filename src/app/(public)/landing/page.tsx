@@ -1,14 +1,16 @@
 import React from 'react';
-import Navbar from '../../../components/Navbar';
+import { Button } from "@/components/ui/button"
+import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"
+import { auth } from "@clerk/nextjs/server"
+import { redirect } from "next/navigation"
 
 const LandingPage: React.FC = () => {
   return (
     <div>
-      <Navbar />
       <div className="relative">
   <div  
     className="bg-cover bg-center w-full h-[857px] relative"
-    style={{ backgroundImage: "url('page1.png')" }}
+    style={{ backgroundImage: "url('mo.png')" }}
   >
   <div className="absolute left-[15px] top-[166px] w-full text-white font-['Perpetua_Titling_MT'] text-[128px] font-light leading-none">
     <h1>RELEAF</h1>
@@ -24,31 +26,53 @@ const LandingPage: React.FC = () => {
 
 
 <div className="h-[350px] bg-white flex flex-row space-x-300 items-center justify-center shadow-md rounded-lg">
-  <div className=' flex space-x-5'>
-  <div >
-    <img
-      src="mdi_truck.png"
-      alt="Truck Driver"
-      className="h-[200px] w-auto object-contain "
-    />
-    </div>
+  <div className=' flex space-x-40'>
+  <div className="flex flex-col items-center">
+            <div className="mb-4">
+              <img 
+                src="/mdi_truck.png" 
+                alt="Truck Driver" 
+                className="w-24 h-24"
+              />
+            </div>
+            <button className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
+              Truck Driver
+            </button>
+          </div>
+
+          {/* Processing Unit 1 */}
+          <div className="flex flex-col items-center">
+            <div className="mb-4">
+              <img 
+                src="/ic_baseline-factory.png" 
+                alt="Processing Unit" 
+                className="w-24 h-24"
+              />
+            </div>
+            <button className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
+              Apply Order
+            </button>
+          </div>
+
+
+           {/* Processing Unit 2 */}
+           <div className="flex flex-col items-center">
+            <div className="mb-4">
+              <img 
+                src="/ri_government-fill.png" 
+                alt="Processing Unit" 
+                className="w-24 h-24"
+              />
+            </div>
+            <button className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
+             Controller
+            </button>
+          </div>
+        
     
 
 
-  <div >
-    <img
-      src="mdi_truck.png"
-      alt="Truck Driver"
-      className="h-[200px] w-auto object-contain "
-    />
-  </div>
-  <div >
-    <img
-      src="mdi_truck.png"
-      alt="Truck Driver"
-      className="h-[200px] w-auto object-contain"
-    />
-  </div>    
+  
 </div> 
  
 </div>
@@ -61,7 +85,7 @@ const LandingPage: React.FC = () => {
         </p>
       </div>
       <div className="flex justify-center">
-        <img src="/api/placeholder/400/300" alt="Analytics illustration" className="w-full max-w-md"/>
+        <img src="../stockGraphic.svg" alt="Analytics illustration" className="w-full max-w-md"/>
       </div>
     </div>
 
@@ -128,4 +152,3 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
-
