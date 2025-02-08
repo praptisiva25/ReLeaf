@@ -1,10 +1,14 @@
+"use client"; 
 import React from 'react';
 import { Button } from "@/components/ui/button"
 import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"
 import { auth } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
+import { useRouter } from "next/navigation";
+import router from 'next/router';
 
 const LandingPage: React.FC = () => {
+  const router = useRouter(); // Use client-side routing
   return (
     <div>
       <div className="relative">
@@ -13,7 +17,7 @@ const LandingPage: React.FC = () => {
     style={{ backgroundImage: "url('mo.png')" }}
   >
   <div className="absolute left-[15px] top-[166px] w-full text-white font-['Perpetua_Titling_MT'] text-[128px] font-light leading-none">
-    <h1>RELEAF</h1>
+    <h1>RELEAFi</h1>
     <h1>OUR INDIA</h1>
   </div>
   <div className="text-white font-['Perpetua'] absolute top-[450px] text-[50px] font-normal leading-normal p-[20px]">
@@ -35,7 +39,8 @@ const LandingPage: React.FC = () => {
                 className="w-24 h-24"
               />
             </div>
-            <button className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
+            <button onClick={() => router.push("/truckauth")}
+            className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
               Truck Driver
             </button>
           </div>
@@ -49,7 +54,8 @@ const LandingPage: React.FC = () => {
                 className="w-24 h-24"
               />
             </div>
-            <button className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
+            <button onClick={() => router.push("/orderauth")}
+            className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
               Apply Order
             </button>
           </div>
@@ -64,7 +70,8 @@ const LandingPage: React.FC = () => {
                 className="w-24 h-24"
               />
             </div>
-            <button className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
+            <button onClick={() => router.push("/controlauth")} 
+            className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors">
              Controller
             </button>
           </div>
