@@ -1,33 +1,43 @@
 "use client";
 
-import { and, eq } from "drizzle-orm";
-import { TruckTable } from "../../../drizzle/schema";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { db } from "../../../drizzle/db"; // Directly importing DB connection
+import { and, eq } from "drizzle-orm";
+import { db } from "../../../drizzle/db";
+import { CompanyTable } from "../../../drizzle/schema";
 
-const TruckAuth: React.FC = () => {
+const OrderAuth: React.FC = () => {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [companyId, setCompanyId] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [error, setError] = useState("");
+  const [isClient, setIsClient] = useState(false); // Fix hydration issue
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      // Query the database directly
-      const driver = await db
+      // Query the database directly inside the same file
+      const company = await db
         .select()
-        .from(TruckTable)
-        .where(and(eq(TruckTable.name, name), eq(TruckTable.email, email)))
-        .limit(1); // Ensure we only get one result
+        .from(CompanyTable)
+        .where(and(eq(CompanyTable.id, companyId), eq(CompanyTable.companyName, companyName)))
+        .limit(1);
 
-      if (driver.length > 0) {
-        router.push("/truckjour"); // Redirect to truck journey page
+      if (company.length > 0) {
+        localStorage.setItem("companyId", companyId);
+        localStorage.setItem("companyName", companyName);
+        router.push("/ordergive");
       } else {
         setError("Invalid credentials. Please try again.");
-        router.push("/landing"); // Redirect back to landing page
+        router.push("/landing");
       }
     } catch (error) {
       console.error("Database error:", error);
@@ -35,32 +45,31 @@ const TruckAuth: React.FC = () => {
     }
   };
 
+  if (!isClient) return null; // Fix hydration issue
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Truck Driver Login</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Company Login</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="flex flex-col">
-          <label className="mb-2 font-medium">Name:</label>
+          <label className="mb-2 font-medium">Company ID:</label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={companyId}
+            onChange={(e) => setCompanyId(e.target.value)}
             className="p-2 border rounded mb-4"
             required
           />
-          <label className="mb-2 font-medium">Email:</label>
+          <label className="mb-2 font-medium">Company Name:</label>
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            value={companyName}
+            onChange={(e) => setCompanyName(e.target.value)}
             className="p-2 border rounded mb-4"
             required
           />
-          <button
-            type="submit"
-            className="bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
-          >
+          <button type="submit" className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
             Submit
           </button>
         </form>
@@ -69,4 +78,4 @@ const TruckAuth: React.FC = () => {
   );
 };
 
-export default TruckAuth;
+export default OrderAuth;
