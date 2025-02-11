@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { and, eq } from "drizzle-orm";
+import Footer from "../../../components/Footer";
 
 const ControlDo: React.FC = () => {
   const [selectedTable, setSelectedTable] = useState<"truck" | "company" | null>(null);
@@ -49,47 +50,54 @@ const ControlDo: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Admin Panel</h2>
-        
-        {/* Table Selection */}
-        <div className="flex justify-between mb-4">
-          <Button onClick={() => setSelectedTable("truck")}>Truck Table</Button>
-          <Button onClick={() => setSelectedTable("company")}>Company Table</Button>
-        </div>
-
-        {/* Form Display */}
-        {selectedTable && (
-          <Card>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="flex flex-col">
-                {selectedTable === "company" ? (
-                  <>
-                    <Label className="mb-2">Company ID:</Label>
-                    <Input type="text" name="id" value={formData.id} onChange={handleChange} required />
-                    
-                    <Label className="mt-4 mb-2">Company Name:</Label>
-                    <Input type="text" name="companyName" value={formData.companyName} onChange={handleChange} required />
-                  </>
-                ) : (
-                  <>
-                    <Label className="mb-2">Truck Driver Name:</Label>
-                    <Input type="text" name="name" value={formData.name} onChange={handleChange} required />
-                    
-                    <Label className="mt-4 mb-2">Email:</Label>
-                    <Input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                  </>
-                )}
-
-                {error && <p className="text-red-500 mt-2">{error}</p>}
-                <Button type="submit" className="mt-4 w-full">Submit</Button>
-              </form>
-            </CardContent>
-          </Card>
-        )}
+    <>
+      <div className="h-screen  flex items-center justify-center bg-[url('/bggray.png')] bg-cover bg-center">
+    <div className="bg-white p-20 rounded-lg shadow-lg w-[500px] bg-opacity-90 backdrop-blur-md -translate-y-20">
+      <h2 className="text-3xl font-medium mb-20 text-center">Admin Panel</h2>
+      
+      {/* Table Selection */}
+      <div className="flex justify-between mb-6">
+        <Button onClick={() => setSelectedTable("truck")}>Truck Table</Button>
+        <Button onClick={() => setSelectedTable("company")}>Company Table</Button>
       </div>
+  
+      {/* Form Display */}
+      {selectedTable && (
+        <Card>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="flex flex-col">
+              {selectedTable === "company" ? (
+                <>
+                  <Label className="mb-2">Company ID:</Label>
+                  <Input type="text" name="id" value={formData.id} onChange={handleChange} required />
+                  
+                  <Label className="mt-4 mb-2">Company Name:</Label>
+                  <Input type="text" name="companyName" value={formData.companyName} onChange={handleChange} required />
+                </>
+              ) : (
+                <>
+                  <Label className="mb-2">Truck Driver Name:</Label>
+                  <Input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                  
+                  <Label className="mt-4 mb-2">Email:</Label>
+                  <Input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                </>
+              )}
+  
+              {error && <p className="text-red-500 mt-2">{error}</p>}
+              <Button type="submit" className="mt-4 w-full">Submit</Button>
+            </form>
+          </CardContent>
+        </Card>
+      )}
     </div>
+    </div>
+    <Footer />
+      </>
+  
+
+  
+
   );
 };
 

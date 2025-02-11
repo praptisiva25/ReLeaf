@@ -30,7 +30,7 @@ export default function PrivateLayout({
                     </div>
                 </nav>
 
-                <main className="container my-6">
+                <main className="container">
                     {children}</main>
             </div>
         )

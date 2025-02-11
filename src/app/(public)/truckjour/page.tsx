@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../../drizzle/db"; 
 import { OrdersTable } from "../../../drizzle/schema";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
 
 const TruckJour: React.FC = () => {
   const [orders, setOrders] = useState<any[]>([]);
@@ -30,8 +30,8 @@ const TruckJour: React.FC = () => {
   if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">All Orders</h1>
+     <div className=" flex flex-col  items-center justify-center min-h-screen bg-[url('/bggray.png')] bg-cover bg-center">
+      <h1 className="text-3xl font-medium text-center mb-6">All Orders</h1>
 
       {orders.length === 0 ? (
         <p className="text-center text-gray-500">No orders found.</p>
@@ -54,7 +54,10 @@ const TruckJour: React.FC = () => {
           ))}
         </div>
       )}
+      
     </div>
+    
+    
   );
 };
 

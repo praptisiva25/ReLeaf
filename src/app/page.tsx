@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { redirect } from "next/navigation";
 import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { Button } from "../components/ui/button";
+import Footer from "../components/Footer";
 
 
 
@@ -32,24 +33,24 @@ const LandingPage: React.FC = () => {
         </div>
         <div>
           <SignInButton>
-            <Button className="mr-2 bg-green-600 hover:bg-green-700">Sign In</Button>
+            <Button className="mr-2 bg-gray-400 hover:bg-gray-500">Sign In</Button>
           </SignInButton>
           <SignUpButton>
-            <Button className="bg-gray-800 text-white hover:bg-gray-900">Sign Up</Button>
+            <Button className="bg-gray-400 text-white hover:bg-gray-500">Sign Up</Button>
           </SignUpButton>
           
         </div>
       </nav>
       <div className="relative">
   <div  
-    className="bg-cover bg-center w-full h-[857px] relative"
+    className="bg-cover bg-center w-full h-[857px] relative "
     style={{ backgroundImage: "url('mo.png')" }}
   >
   <div className="absolute left-[15px] top-[166px] w-full text-white font-['Perpetua_Titling_MT'] text-[128px] font-light leading-none">
     <h1>RELEAF</h1>
     <h1>OUR INDIA</h1>
   </div>
-  <div className="text-white font-['Perpetua'] absolute top-[450px] text-[50px] font-normal leading-normal p-[20px]">
+  <div className="text-white font-['Perpetua'] absolute top-[450px] text-[50px] font-light leading-normal p-[20px]">
 
     <p>Smarter Recycling, Faster & Greener—Optimizing Collection,</p>
     <p>Streamlining, and Transport for a Sustainable Future!</p>
@@ -57,30 +58,7 @@ const LandingPage: React.FC = () => {
   </div>
   </div>
 
-  <h1 className="text-3xl font-bold text-gray-900 dark:text-white text-center my-6">
-        Join RELEAF as
-      </h1>
-
-      {/* Role Selection Section */}
-      <div className="h-[350px] bg-white flex items-center justify-center shadow-md rounded-lg">
-        <div className="flex space-x-40">
-          {[
-            { img: "/mdi_truck.png", label: "Truck Driver", link: "/truckauth" },
-            { img: "/ic_baseline-factory.png", label: "Apply Order", link: "/orderauth" },
-            { img: "/ri_government-fill.png", label: "Controller", link: "/controlauth" },
-          ].map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <img src={item.img} alt={item.label} className="w-24 h-24 mb-4" />
-              <button 
-                onClick={() => router.push(item.link)}
-                className="bg-[#508D4E] text-white px-6 py-2 rounded-full hover:bg-[#3f7a3d] transition-colors"
-              >
-                {item.label}
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
+  <div className="h-10"></div>
 
       {/* About Section */}
       <div className="bg-[#508D4E] p-8 rounded-lg max-w-6xl mx-auto mt-12">
@@ -124,46 +102,7 @@ const LandingPage: React.FC = () => {
       <div className='h-[30px]'></div>
 
       {/* Footer Section */}
-      <footer className=" text-white py-8 absolute left-0 w-screen bg-gray-800 text-center">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { title: "Tickets & Booking", links: ["Lift Tickets", "Season Passes", "Vacation Packages"] },
-              { title: "Learn More", links: ["About Lift", "Press Releases", "Environment", "Jobs", "Privacy Policy", "Contact Us"] },
-              { title: "Contact Us", details: ["Hotel Reservation: 123-456-7890", "Ticket Office: 123-456-7890"] },
-              { title: "Social", icons: ["facebook-f", "twitter", "youtube", "wordpress"] },
-            ].map((section, index) => (
-              <div key={index}>
-                <h3 className="font-semibold text-lg mb-4">{section.title}</h3>
-                {section.links ? (
-                  <ul className="space-y-2">
-                    {section.links.map((link, i) => (
-                      <li key={i}><a href="#" className="hover:underline">{link}</a></li>
-                    ))}
-                  </ul>
-                ) : section.details ? (
-                  <ul className="space-y-2">
-                    {section.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="flex space-x-4">
-                    {section.icons.map((icon, i) => (
-                      <a key={i} href="#" className="hover:text-gray-400">
-                        <i className={`fab fa-${icon}`}></i>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-gray-600 mt-6 pt-4 text-center text-sm">
-            © 2019 Lift Media | All Rights Reserved
-          </div>
-        </div>
-      </footer>
+     <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 "use client"; 
 import React from 'react';
 import { useRouter } from "next/navigation";
+import Footer from "../../../components/Footer";
 
 const LandingPage: React.FC = () => {
   const router = useRouter(); // Use client-side routing
@@ -10,22 +11,22 @@ const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <div className="relative">
         <div  
-          className="bg-cover bg-center w-full h-[857px] relative rounded-2xl"
+          className="bg-cover bg-center w-screen h-[857px] relative"
           style={{ backgroundImage: "url('mo.png')" }}
         >
           <div className="absolute left-[15px] top-[166px] w-full text-white font-['Perpetua_Titling_MT'] text-[128px] font-light leading-none">
             <h1>RELEAF</h1>
             <h1>OUR INDIA</h1>
           </div>
-          <div className="text-white font-['Perpetua'] absolute top-[450px] text-[50px] font-normal leading-normal p-[20px]">
+          <div className="text-white font-['Perpetua'] absolute top-[450px] text-[50px] font-light leading-normal p-[20px]">
             <p>Smarter Recycling, Faster & Greener—Optimizing Collection,</p>
-            <p>Streamlining, and Transport for a Sustainable Future!</p>
+            <p>Streamlining and Transport for a Sustainable Future!</p>
           </div>
         </div>
       </div>
 
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white text-center my-6">
-        Join RELEAF as
+      <h1 className="text-3xl text-[#508D4E] dark:text-white text-center my-6 font-bold" >
+        Join ReLeaf as
       </h1>
 
       {/* Role Selection Section */}
@@ -91,47 +92,9 @@ const LandingPage: React.FC = () => {
       <div className='h-[30px]'></div>
 
       {/* Footer Section */}
-      <footer className=" text-white py-8 absolute left-0 w-screen bg-gray-800 text-center">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { title: "Tickets & Booking", links: ["Lift Tickets", "Season Passes", "Vacation Packages"] },
-              { title: "Learn More", links: ["About Lift", "Press Releases", "Environment", "Jobs", "Privacy Policy", "Contact Us"] },
-              { title: "Contact Us", details: ["Hotel Reservation: 123-456-7890", "Ticket Office: 123-456-7890"] },
-              { title: "Social", icons: ["facebook-f", "twitter", "youtube", "wordpress"] },
-            ].map((section, index) => (
-              <div key={index}>
-                <h3 className="font-semibold text-lg mb-4">{section.title}</h3>
-                {section.links ? (
-                  <ul className="space-y-2">
-                    {section.links.map((link, i) => (
-                      <li key={i}><a href="#" className="hover:underline">{link}</a></li>
-                    ))}
-                  </ul>
-                ) : section.details ? (
-                  <ul className="space-y-2">
-                    {section.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="flex space-x-4">
-                    {section.icons.map((icon, i) => (
-                      <a key={i} href="#" className="hover:text-gray-400">
-                        <i className={`fab fa-${icon}`}></i>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-gray-600 mt-6 pt-4 text-center text-sm">
-            © 2019 Lift Media | All Rights Reserved
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
+    
   );
 };
 

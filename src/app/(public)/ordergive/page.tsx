@@ -61,8 +61,8 @@ const OrderGive: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
+    <div className=" flex flex-col items-center justify-center min-h-screen bg-[url('/bggray.png')] bg-cover bg-center">
+  <div className="bg-white p-8 rounded-lg shadow-md w-96 bg-opacity-80 backdrop-blur-md transform -translate-y-5">
         <h2 className="text-2xl font-bold mb-6 text-center">Place an Order</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="flex flex-col">

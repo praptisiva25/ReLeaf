@@ -5,6 +5,7 @@ import { TruckTable } from "../../../drizzle/schema";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { db } from "../../../drizzle/db"; // Directly importing DB connection
+import Footer from "../../../components/Footer";
 
 const TruckAuth: React.FC = () => {
   const router = useRouter();
@@ -36,9 +37,9 @@ const TruckAuth: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Truck Driver Login</h2>
+    <><div className=" flex flex-col items-center justify-center min-h-screen bg-[url('/bggray.png')] bg-cover bg-center">
+  <div className="bg-white p-8 rounded-lg shadow-md w-96 bg-opacity-80 backdrop-blur-md transform -translate-y-16">
+        <h2 className="text-2xl font-medium  mb-6 text-center">Truck Driver Login</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="flex flex-col">
           <label className="mb-2 font-medium">Name:</label>
@@ -66,6 +67,8 @@ const TruckAuth: React.FC = () => {
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

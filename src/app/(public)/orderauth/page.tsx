@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { and, eq } from "drizzle-orm";
 import { db } from "../../../drizzle/db";
 import { CompanyTable } from "../../../drizzle/schema";
+import Footer from "../../../components/Footer";
 
 const OrderAuth: React.FC = () => {
   const router = useRouter();
@@ -48,9 +49,9 @@ const OrderAuth: React.FC = () => {
   if (!isClient) return null; // Fix hydration issue
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Company Login</h2>
+    <><div className=" flex flex-col items-center justify-center min-h-screen bg-[url('/bggray.png')] bg-cover bg-center">
+  <div className="bg-white p-8 rounded-lg shadow-md w-96 bg-opacity-80 backdrop-blur-md transform -translate-y-16">
+        <h2 className="text-2xl font-medium mb-6 text-center">Company Login</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="flex flex-col">
           <label className="mb-2 font-medium">Company ID:</label>
@@ -75,6 +76,8 @@ const OrderAuth: React.FC = () => {
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
